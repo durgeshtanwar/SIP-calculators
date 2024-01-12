@@ -8,77 +8,245 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <form>
-        <div class="flex justify-between w-1/2">
-          <label for="investment">Monthly Investment</label>
-          <div
-            class="px-2 py-2 bg-yellow-100 shadow w-20"
-            id="investment-value"
-          ></div>
-        </div>
+    <section class="sip hidden" id="sip_calculator">
+      <div class="container">
+        <form>
+          <h1 class="text-lg text-black">SIP Calculator</h1>
+          <div class="flex justify-between w-1/2">
+            <label for="investment">Monthly Investment</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="investment-value"
+            ></div>
+          </div>
 
-        <input
-          type="range"
-          id="investment"
-          name="investment"
-          id="investment"
-          min="1000"
-          max="30000"
-          cur="1000"
-          step="1000"
-          class="slider w-1/2"
-        />
-        <div class="flex justify-between w-1/2">
-          <label for="return">Expected return rate(p.a)</label>
-          <div
-            class="px-2 py-2 bg-yellow-100 shadow w-20"
-            id="return-value"
-          ></div>
-        </div>
+          <input
+            type="range"
+            id="investment"
+            name="investment"
+            id="investment"
+            min="1000"
+            max="30000"
+            cur="1000"
+            step="1000"
+            class="slider w-1/2"
+          />
+          <div class="flex justify-between w-1/2">
+            <label for="return">Expected return rate(p.a)</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="return-value"
+            ></div>
+          </div>
 
-        <input
-          type="range"
-          id="returnRate"
-          name="return"
-          id="return"
-          min="1"
-          max="30"
-          step=".1"
-          class="slider w-1/2"
-        />
-        <div class="flex justify-between w-1/2">
-          <label for="period">Time Period</label>
-          <div
-            class="px-2 py-2 bg-yellow-100 shadow w-20"
-            id="period-value"
-          ></div>
-        </div>
-        <input
-          type="range"
-          id="period"
-          name="period"
-          id="period"
-          min="1"
-          max="40"
-          class="slider w-1/2"
-        />
-        <div class="py-20 flex flex-col">
+          <input
+            type="range"
+            id="returnRate"
+            name="return"
+            id="return"
+            min="1"
+            max="30"
+            step=".1"
+            class="slider w-1/2"
+          />
           <div class="flex justify-between w-1/2">
-            <p class="text-sm text-gray-500">Invested Amount</p>
-            <p class="font-bold text-gray-600" id="investedAmount">Rs 30000</p>
+            <label for="period">Time Period</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="period-value"
+            ></div>
           </div>
+          <input
+            type="range"
+            id="period"
+            name="period"
+            id="period"
+            min="1"
+            max="40"
+            class="slider w-1/2"
+          />
+          <div class="py-20 flex flex-col">
+            <div class="flex justify-between w-1/2">
+              <p class="text-sm text-gray-500">Invested Amount</p>
+              <p class="font-bold text-gray-600" id="investedAmount"></p>
+            </div>
+            <div class="flex justify-between w-1/2">
+              <p class="text-sm text-gray-500">Estimated Return</p>
+              <p class="font-bold text-gray-600" id="estimatedReturn"></p>
+            </div>
+            <div class="flex justify-between w-1/2">
+              <p class="text-sm text-gray-500">Total Value</p>
+              <p class="font-bold text-gray-600" id="totalValue"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="sip hidden" id="retirement_calculator">
+      <div class="container">
+        <form>
+          <h1 class="text-3xl bold py-20">Retirement Plan</h1>
           <div class="flex justify-between w-1/2">
-            <p class="text-sm text-gray-500">Estimated Return</p>
-            <p class="font-bold text-gray-600" id="estimatedReturn">Rs 30000</p>
+            <label for="retirement_current_age">Your Current Age</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="retirement_current_age_value"
+            ></div>
           </div>
+
+          <input
+            type="range"
+            id="retirement_current_age"
+            name="retirement_current_age"
+            min="25"
+            max="60"
+            cur="35"
+            step="1"
+            class="slider w-1/2"
+          />
           <div class="flex justify-between w-1/2">
-            <p class="text-sm text-gray-500">Total Value</p>
-            <p class="font-bold text-gray-600" id="totalValue">Rs 30000</p>
+            <label for="return">Expected Retirement Age </label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="expected_retirement_age_value"
+            ></div>
           </div>
-        </div>
-      </form>
-    </div>
+
+          <input
+            type="range"
+            id="expected_retirement_age"
+            name="expected_retirement_age"
+            min="55"
+            max="70"
+            step="1"
+            class="slider w-1/2"
+          />
+          <div class="flex justify-between w-1/2">
+            <label for="period">Monthly Contribution in Rs</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="retirement_monthly_contribution_value"
+            ></div>
+          </div>
+          <input
+            type="range"
+            id="retirement_monthly_contribution"
+            name="retirement_monthly_contribution"
+            id="retirement_monthly_contribution"
+            min="1000"
+            max="50000"
+            step="1000"
+            class="slider w-1/2"
+          />
+          <div class="flex justify-between w-1/2">
+            <label for="return">Expected return rate(p.a) in %</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="retirment_return_rate_value"
+            ></div>
+          </div>
+
+          <input
+            type="range"
+            id="retirment_return_rate"
+            name="retirment_return_rate"
+            id="return"
+            min="1"
+            max="30"
+            step=".1"
+            class="slider w-1/2"
+          />
+
+          <div class="py-20 flex flex-col">
+            <div class="flex justify-between w-1/2">
+              <p class="text-sm text-gray-500">
+                Future Value of Retirement Plan
+              </p>
+              <p
+                class="font-bold text-gray-600"
+                id="future_value_retirement"
+              ></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="sip hidden" id="dreamHouse_calculator">
+      <div class="container">
+        <form>
+          <h1 class="text-3xl bold py-20">Dream House Plan</h1>
+          <div class="flex justify-between w-1/2">
+            <label for="dream_car_buy_years_left">Years Untill Buy</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="dream_car_buy_years_left_value"
+            ></div>
+          </div>
+
+          <input
+            type="range"
+            id="dream_car_buy_years_left"
+            name="dream_car_buy_years_left"
+            min="3"
+            max="10"
+            cur="3"
+            step="1"
+            class="slider w-1/2"
+          />
+          <div class="flex justify-between w-1/2">
+            <label for="return">Dream Car Contribution</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="dream_car_contribution_value"
+            ></div>
+          </div>
+
+          <input
+            type="range"
+            id="dream_car_contribution"
+            name="dream_car_contribution"
+            min="1000"
+            max="15000"
+            step="1000"
+            class="slider w-1/2"
+          />
+
+          <div class="flex justify-between w-1/2">
+            <label for="return">Expected return rate(p.a) in %</label>
+            <div
+              class="px-2 py-2 bg-yellow-100 shadow w-20"
+              id="dream_car_return_rate_value"
+            ></div>
+          </div>
+
+          <input
+            type="range"
+            id="retirment_return_rate"
+            name="dream_car_return_rate"
+            id="dream_car_return_rate"
+            min="1"
+            max="30"
+            step=".1"
+            class="slider w-1/2"
+          />
+
+          <div class="py-20 flex flex-col">
+            <div class="flex justify-between w-1/2">
+              <p class="text-sm text-gray-500">
+                Future Value of Dream Car Plan
+              </p>
+              <p
+                class="font-bold text-gray-600"
+                id="future_value_dream_car"
+              ></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <script src="./logic.js"></script>
   </body>
 </html>

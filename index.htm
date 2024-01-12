@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="flex justify-between w-1/2">
+          <label for="investment">Monthly Investment</label>
+          <div
+            class="px-2 py-2 bg-yellow-100 shadow w-20"
+            id="investment-value"
+          ></div>
+        </div>
+
+        <input
+          type="range"
+          id="investment"
+          name="investment"
+          id="investment"
+          min="1000"
+          max="30000"
+          cur="1000"
+          step="1000"
+          class="slider w-1/2"
+        />
+        <div class="flex justify-between w-1/2">
+          <label for="return">Expected return rate(p.a)</label>
+          <div
+            class="px-2 py-2 bg-yellow-100 shadow w-20"
+            id="return-value"
+          ></div>
+        </div>
+
+        <input
+          type="range"
+          id="returnRate"
+          name="return"
+          id="return"
+          min="1"
+          max="30"
+          step=".1"
+          class="slider w-1/2"
+        />
+        <div class="flex justify-between w-1/2">
+          <label for="period">Time Period</label>
+          <div
+            class="px-2 py-2 bg-yellow-100 shadow w-20"
+            id="period-value"
+          ></div>
+        </div>
+        <input
+          type="range"
+          id="period"
+          name="period"
+          id="period"
+          min="1"
+          max="40"
+          class="slider w-1/2"
+        />
+        <div class="py-20 flex flex-col">
+          <div class="flex justify-between w-1/2">
+            <p class="text-sm text-gray-500">Invested Amount</p>
+            <p class="font-bold text-gray-600" id="investedAmount">Rs 30000</p>
+          </div>
+          <div class="flex justify-between w-1/2">
+            <p class="text-sm text-gray-500">Estimated Return</p>
+            <p class="font-bold text-gray-600" id="estimatedReturn">Rs 30000</p>
+          </div>
+          <div class="flex justify-between w-1/2">
+            <p class="text-sm text-gray-500">Total Value</p>
+            <p class="font-bold text-gray-600" id="totalValue">Rs 30000</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="./logic.js"></script>
+  </body>
+</html>
